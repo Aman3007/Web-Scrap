@@ -93,6 +93,9 @@ The project was developed incrementally over a focused 7-hour session. Below is 
 
 | Commit Hash | Message | Description |
 | :--- | :--- | :--- |
+| `23deef3` | `Refactor: Update cookie options for secure and sameSite settings` | Updated backend cookie configuration with SameSite: None and Secure: true to enable cross-origin authentication for the hosted Render domains. |
+| `ae57a47` | `Refactor: Update API base URL to production endpoint` | Configured the frontend Axios instance to point directly to the production backend URL on Render. |
+| `3955321` | `refactor: Update API proxy target to production URL` | Updated the Vite proxy configuration to align local development with the production backend environment. |
 | `b87d16b` | `refactor: finalize codebase and perform cleanup` | Final audit of the codebase, removing unused variables and performing minor code organization for production readiness. |
 | `e074e8b` | `docs: add comprehensive readme and documentation` | Created the project README with installation guides, API documentation, and architecture overviews. |
 | `01d7235` | `feat: implement protected routes and user persistence` | Added React Router guards to prevent unauthorized access to bookmarks and handled user session hydration from the API. |
@@ -111,8 +114,4 @@ The project was developed incrementally over a focused 7-hour session. Below is 
 | `4b7d600` | `feat: configure express server and mongodb connection` | Initialized the Express application with security middleware (Helmet, CORS) and established the MongoDB connection. |
 | `82704aa` | `chore: initialize project structure and setup` | Set up the root directory with basic dependencies, project configuration, and Git initialization. |
 
-## 🧪 Development Patterns
-- **Clean Architecture**: Separation of concerns between controllers, services, and models.
-- **Global Error Handling**: Centralized middleware for catching and formatting errors.
-- **Optimistic UI**: Fast bookmarking experience using React Query cache.
-- **Security**: Helmet, CORS, and Express Rate Limit implemented.
+
