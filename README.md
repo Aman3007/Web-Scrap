@@ -87,6 +87,30 @@ The app should now be running at `http://localhost:5173`.
 ### Scraper
 - `POST /api/scrape` - Manually trigger HN scraper
 
+## 📜 Development History
+
+The project was developed incrementally over a focused 7-hour session. Below is the technical breakdown of the implementation sequence:
+
+| Commit Hash | Message | Description |
+| :--- | :--- | :--- |
+| `b87d16b` | `refactor: finalize codebase and perform cleanup` | Final audit of the codebase, removing unused variables and performing minor code organization for production readiness. |
+| `e074e8b` | `docs: add comprehensive readme and documentation` | Created the project README with installation guides, API documentation, and architecture overviews. |
+| `01d7235` | `feat: implement protected routes and user persistence` | Added React Router guards to prevent unauthorized access to bookmarks and handled user session hydration from the API. |
+| `20b6f62` | `feat: add bookmarking support with tanstack query` | Integrated bookmarking logic with React Query's `useMutation`, enabling instant UI updates and cache invalidation. |
+| `438aac5` | `feat: integrate stories feed with pagination` | Developed the primary stories feed with complex pagination controls, search filtering, and custom date formatting. |
+| `29149ac` | `feat: build responsive navigation and layout` | Created the modern dark-themed navigation bar and layout wrappers with glassmorphism effects and responsive behavior. |
+| `c6ebd3b` | `feat: implement authentication context and forms` | Built the global `AuthContext` for state management and implemented registration/login forms with robust validation. |
+| `75f6503` | `feat: initialize frontend with routing and tailwind css` | Set up the Vite project with Tailwind CSS v4 and configured the base routing structure for the SPA. |
+| `a25696c` | `feat: implement bookmarks api functionality` | Added specialized backend routes to fetch a user's bookmarked stories through Mongoose relationship population. |
+| `fa90361` | `feat: add scraper and story api endpoints` | Developed the public API for fetching paginated stories and the manual trigger for the scraping service. |
+| `d221d2a` | `feat: create hacker news scraper service` | Implemented the core scraper using Cheerio to parse HN's HTML and a service layer to handle database upserts. |
+| `4f8700b` | `feat: implement authentication routes and controllers` | Built the auth controllers for registration and login, including password hashing and session management logic. |
+| `e659130` | `feat: implement jwt cookie authentication middleware` | Developed the security middleware to extract and verify JWT tokens from HttpOnly cookies instead of headers. |
+| `f3dab71` | `feat: add jwt utility and async helpers` | Created utility functions for token signing/verification and a global `asyncHandler` to streamline controller code. |
+| `99a9f60` | `feat: implement user and story models` | Defined the Mongoose schemas for Users and Stories, including compound indexes for search performance. |
+| `4b7d600` | `feat: configure express server and mongodb connection` | Initialized the Express application with security middleware (Helmet, CORS) and established the MongoDB connection. |
+| `82704aa` | `chore: initialize project structure and setup` | Set up the root directory with basic dependencies, project configuration, and Git initialization. |
+
 ## 🧪 Development Patterns
 - **Clean Architecture**: Separation of concerns between controllers, services, and models.
 - **Global Error Handling**: Centralized middleware for catching and formatting errors.
